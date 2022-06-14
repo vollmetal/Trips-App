@@ -1,0 +1,53 @@
+body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.title {
+    display: flex;
+    justify-content: center;
+    margin: 2rem;
+    width: 100%;
+    border-bottom-width: 2px;
+    border-bottom-style: solid;
+    border-bottom-color: black;
+}
+
+.homePageButton {
+    width: 100%;
+    display: flex;
+    justify-content: left;
+}
+
+.tripItems {
+    width: 100%;
+    display: flex;
+    flex-direction:column;
+    align-items: center;
+    padding: 1rem;
+    margin: 0.2rem;
+    border-width: 2px;
+    border-style: solid;
+    border-color: black;
+}
+
+.main-menu-options {
+    display: flex;
+    justify-content: space-between;
+}
+
+.main-menu-options form{
+    margin: 1rem;
+}
+
+.calendarInputs {
+    display: flex;
+    flex-direction: column;
+}
+
+.newTripForm {
+    width: 100%;
+    display: flex;
+    justify-content: space-evenly;
+}

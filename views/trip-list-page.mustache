@@ -1,0 +1,27 @@
+<html>
+    <head>
+        <link rel="stylesheet" href="/main.css">
+    </head>
+    <body>
+        <form class="homePageButton" action="/home-page" method="GET">
+            <button>Return to Home Page</button>
+        </form>
+        <div>
+            <h1 class="title">Trips Saved</h1>
+            <ul>
+            {{#trips}}
+                <li class="tripItems">
+                    <h3>{{tripName}}</h3>
+                    <img src="{{tripImage}}" alt="Image not found">
+                    <span>Leave for trip on: {{tripDeparture}}</span>
+                    <span>Return on: {{tripReturn}}</span>
+                    <form action="/delete-trip" method="POST" >
+                        <button name="id" value = "{{id}}">Delete</button>
+                    </form>
+                    
+                </li>
+            {{/trips}}               
+            </ul>
+        </div>
+    </body>
+</html>
