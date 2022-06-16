@@ -51,3 +51,36 @@ body {
     display: flex;
     justify-content: space-evenly;
 }
+
+.loginButton {
+    width: 100%;
+    display: flex;
+    justify-content: left;
+}
+
+.logOutButton {
+    width: 100%;
+    display: flex;
+    justify-content: right;
+}
+
+.siteHeader {
+    width: 100%;
+    display: flex;
+}
+
+.loginWindow {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.loginForm {
+    width: 100%;
+    display: flex;
+    margin: 1rem;
+}
+
+.inputWindow {
+    margin: 1rem;
+}

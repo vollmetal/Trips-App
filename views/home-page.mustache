@@ -3,9 +3,17 @@
         <link rel="stylesheet" href="main.css">
     </head>
     <body>
-        <h1 class="title">Welcome to the trip tracker app</h1>
+        <div class="siteHeader">
+            <form class="loginButton" action="/login" method="get">
+                <button>Log in</button>
+            </form>
+            <form class="logOutButton" action="/logout" method="post">
+                <button>Log out</button>
+            </form>
+        </div>
+        <h1 class="title">Welcome to the trip tracker app {{username}}</h1>
         <div class="main-menu-options">
-            <form action="/trip-from" method="GET">
+            <form action="/trip-form" method="GET">
                 <button>Make a new trip</button>
             </form>
             <form action="/trip-list" method="GET">
