@@ -2,10 +2,13 @@ const express = require('express')
 const session = require('express-session')
 const app = express()
 
+const http = require('http').Server(app)
+const io = require('socket.io')(http)
+
 const mustache = require('mustache-express')
 
 app.use(express.urlencoded())
-app.use(express.static('css'))
+app.use(express.static('public'))
 
 app.use(session({
     secret: 'KEY',
@@ -20,6 +23,7 @@ app.set('views', './views')
 app.set('view engine', 'mustache')
 
 const savedAccounts = []
+const currentChatrooms = []
 let count = 0
 
 function authenticateAccount(req, res, next) {
@@ -133,6 +137,26 @@ app.post('/logout', (req, res) => {
     res.redirect('/home-page')
 })
 
-app.listen(2080, () => {
+
+//Chat page
+app.get('/chatroom', authenticateAccount, (req, res) => {
+    res.sendFile(`${__dirname}/client-pages/comment-page.html`)
+})
+
+app.get('/chatroom/info', (req, res) => {
+    res.json({username: req.session.currentUser, currentRooms: currentChatrooms})
+})
+
+io.on('connection', (socket) => {
+    console.log('User is connected')
+   
+    socket.on('Main', (chat) => {
+        console.log(chat)
+        // server sends message to the client 
+        io.emit('Main', chat)
+    })
+})
+
+http.listen(2080, () => {
 
 })

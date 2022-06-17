@@ -1,0 +1,38 @@
+<html>
+    <head>
+        <link rel="stylesheet" href="/css/chatroom.css">
+    </head>
+    <body>
+        <div class="siteHeader">
+            <form class="homePageButton" action="/home-page" method="GET">
+                <button>Return to Home Page</button>
+            </form>
+            <form class="logOutButton" action="/logout" method="post">
+                <button>Log out</button>
+            </form>
+        </div>
+        <ul id="chatroomSelect">
+            <li>
+                <button class="chatroomSelectButton">Select Me</button>
+            </li>
+        </ul>
+        <div id="chatroom">
+            <h1 id="chatroomHeader">Chatroom</h1>
+            <ul id="chatroomTextList">
+                <li>
+                    <p>message</p>
+                    <span>Name</span>
+                </li>
+            </ul>
+            <div class="chatroomInput">
+                <input type="text" id="inputTextBox">
+                <button id="sendButton" onclick="sendMessage()">Send</button>
+            </div>
+        </div>
+        <script src = "/socket.io/socket.io.js"></script>
+        <script>
+            var socket = io() 
+        </script>
+        <script src="/js/comment-page.js"></script>
+    </body>
+</html>
